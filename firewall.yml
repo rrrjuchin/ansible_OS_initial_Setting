@@ -1,0 +1,12 @@
+---
+- name: stop firewalld
+  shell: systemctl stop firewalld
+  register: ps
+- debug: var=ps.stdout_lines
+- name: disable firewalld
+  shell: systemctl disable firewalld
+  register: ps
+- debug: var=ps.stdout_lines
+- name: disalble SELinux
+  selinux:
+    state: disabled

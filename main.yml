@@ -1,0 +1,28 @@
+---
+# tasks file for common
+- name: change host name
+  include: hostname.yml
+- name: swap off
+  include: swap.yml
+- name: ipv6 disable
+  include: ipv6.yml
+- name: disable firewalld
+  include: firewall.yml
+- name: chrony configuration
+  include: chrony.yml
+- name: change mtu
+  include: mtu.yml
+- name: ulimit
+  include: osparam.yml
+- name: crontab
+  include: crontab.yml
+- name: yumupdate
+  include: yumupdate.yml
+- name: sessiontimeout
+  include: sessionto.yml
+- name: chmoduserdir
+  include: chmoduserdir.yml
+- name: sulog
+  include: sulog.yml
+- name: vm reboot
+  reboot:

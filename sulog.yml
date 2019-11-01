@@ -1,0 +1,39 @@
+- name: activate sulog
+  lineinfile:
+    path: /etc/login.defs
+    line: 'SULOG_FILE /var/log/sulog'
+    insertafter: '# will prevent'
+- name: add notice setting to /etc/syslog.conf
+  lineinfile:
+    path: /etc/syslog.conf
+    line: '*.notice /var/log/syslog.log'
+    insertafter: '# empty string'
+    create: yes
+- name: add alert setting to /etc/syslog.conf
+  lineinfile:
+    path: /etc/syslog.conf
+    line: '*.alert /dev/console'
+    insertafter: '# empty string'
+- name: add emergency setting to /etc/syslog.conf
+  lineinfile:
+    path: /etc/syslog.conf
+    line: '*.emerg *'
+    insertafter: '# empty string'
+- name: add authpriv setting to /etc/syslog.conf
+  lineinfile:
+    path: /etc/syslog.conf
+    line: 'authpriv.* /var/log/secure'
+    insertafter: '# empty string'
+- name: add auth.notice setting to /etc/syslog.conf
+  lineinfile:
+    path: /etc/syslog.conf
+    line: 'auth.notice /var/log/auth.notice'
+    insertafter: '# empty string'
+- name: Create su default file
+  lineinfile:
+    path: /etc/default/su
+    line: 'SULOG=/var/adm/sulog'
+    insertafter: '# empty string'
+    create: yes
+- name: restart rsyslogd
+  command: systemctl restart rsyslog

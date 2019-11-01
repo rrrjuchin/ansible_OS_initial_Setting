@@ -1,0 +1,34 @@
+---
+- name: modify nofile
+  pam_limits:
+    domain: "{{running_user}}"
+    limit_type: soft
+    limit_item: nofile
+    value: 65536
+  when:
+    - "running_user != ''"
+- name: modify nofile
+  pam_limits:
+    domain: "{{running_user}}"
+    limit_type: hard
+    limit_item: nofile
+    value: 65536
+  when:
+    - "running_user != ''"
+- name: modify nproc
+  pam_limits:
+    domain: "{{running_user}}"
+    limit_type: soft
+    limit_item: nproc
+    value: 65536
+  when:
+    - "running_user != ''"
+- name: modify nproc
+  pam_limits:
+    domain: "{{running_user}}"
+    limit_type: hard
+    limit_item: nproc
+    value: 65536
+  when:
+    - "running_user != ''"
+

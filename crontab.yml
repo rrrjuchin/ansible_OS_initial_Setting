@@ -1,0 +1,42 @@
+- name: "Mode 640 for /etc/crontab/*"
+  file:
+    path: /etc/crontab/
+    owner: root
+    group: root
+    mode: '0640'
+    recurse: yes
+- name: "Mode 640 for /etc/cron.daily/*"
+  file:
+    path: /etc/cron.daily/
+    owner: root
+    group: root
+    mode: '0640'
+    recurse: yes
+- name: "Mode 640 for /etc/cron.hourly/*"
+  file:
+    path: /etc/cron.hourly/
+    owner: root
+    group: root
+    mode: '0640'
+    recurse: yes
+- name: "Mode 640 for /etc/cron.monthly/*"
+  file:
+    path: /etc/cron.monthly/
+    owner: root
+    group: root
+    mode: '0640'
+    recurse: yes
+- name: "Mode 640 for /etc/cron.weekly/*"
+  file:
+    path: /etc/cron.weekly/
+    owner: root
+    group: root
+    mode: '0640'
+    recurse: yes
+- name: "Mode 640 for /var/spool/cron/*"
+  file:
+    path: /var/spool/cron/
+    owner: root
+    group: root
+    mode: '0640'
+    recurse: yes

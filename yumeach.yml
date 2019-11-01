@@ -1,0 +1,8 @@
+- name: install openssh
+  command: yum -y install openssh
+- name: install openssl
+  command: yum -y install openssl
+- name: install bash
+  command: yum -y install bash
+- name: install glibc
+  command: yum -y install glibc

@@ -1,0 +1,5 @@
+- name: timeout script change
+  replace:
+    path: /etc/profile
+    regexp: 'TMOUT = 300'
+    replace: 'TMOUT=300'

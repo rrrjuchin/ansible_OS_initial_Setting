@@ -1,0 +1,15 @@
+- name: set session timeout
+  lineinfile:
+    path: /etc/profile
+    line: 'export TMOUT'
+    insertafter: '# will prevent'
+- name: set session timeout
+  lineinfile:
+    path: /etc/profile
+    line: 'TMOUT=300'
+    insertafter: '# will prevent'
+- name: set session timeout
+  lineinfile:
+    path: /etc/profile
+    line: '#Timeout'
+    insertafter: '# will prevent'

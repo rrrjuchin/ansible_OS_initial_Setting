@@ -1,0 +1,5 @@
+---
+- debug:
+    msg: "my name is {{ host_name }}"
+- hostname:
+    name: "{{ host_name }}"
